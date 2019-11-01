@@ -1,5 +1,8 @@
 import org.joda.time.LocalDate;
 
+import javax.swing.text.html.Option;
+import java.util.Optional;
+
 
 public class Lab1 {
     public static void main(String[] args) {
@@ -19,14 +22,24 @@ public class Lab1 {
             month += 1;
             day += 1;
         }
-        dArr.removePerson(3);
+        dArr.addPerson(null);
+        dArr.addPerson(null);
+        dArr.addPerson(null);
+        dArr.addPerson(null);
+        dArr.addPerson(null);
+        dArr.addPerson(null);
+        Optional<Person>pd = dArr.getPerson(16);
+
+        dArr.removePerson(50);
 
         printPerson(dArr);
 
     }
-    static void printPerson(DynamicArray dArr){
-        for (int i = 0;i<dArr.getLength()-1;i++){
-            System.out.println(outputPerson(dArr.getPerson(i)));
+
+    static void printPerson(DynamicArray dArr) {
+        for (int i = 0; i < dArr.getLength() - 1; i++) {
+            if (!Optional.empty().equals(dArr.getPerson(i)))
+                System.out.println(outputPerson(dArr.getPerson(i).get()));
         }
     }
 
