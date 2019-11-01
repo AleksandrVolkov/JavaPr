@@ -1,3 +1,4 @@
+import java.util.Optional;
 /**
  * Класс динамического массива
  */
@@ -27,10 +28,12 @@ public class DynamicArray {
      * @param newPerson принимает персону и добавлят ее в масив
      */
     public void addPerson(Person newPerson) {
+
         Person[] newArr = new Person[this.arr.length + 1];
 
         for (int i = 0; i < newArr.length; i++) {
-            if (this.arr[i] == null) {
+
+            if ( arr[i] == null ) {
                 newArr[i] = newPerson;
                 break;
             } else {
