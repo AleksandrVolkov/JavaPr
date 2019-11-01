@@ -1,5 +1,3 @@
-//import org.omg.CORBA.PERSIST_STORE;
-
 /**
  * Класс динамического массива
  */
