@@ -85,10 +85,10 @@ public class Person{
     public String getGender()
     {
         if(this.gender == true){
-            return "Мужчина";
+            return "man";
         }
         else{
-            return "Женщина";
+            return "woman";
         }
 
     }
