@@ -10,7 +10,7 @@ public class DynamicArray {
      * Конструктор. Создает массив с начальным значением
      */
     public DynamicArray() {
-        this.arr = new Person[1];
+        this.arr = new Person[0];
     }
 
     /**
@@ -42,19 +42,21 @@ public class DynamicArray {
 
         Person[] newArr = new Person[this.arr.length + 1];
 
-        for (int i = 0; i < newArr.length; i++) {
-
-            if (arr[i] == null) {
-                newArr[i] = newPerson;
-                break;
-            } else {
-                newArr[i] = this.arr[i];
-            }
+        for (int i = 0; i < this.arr.length; i++) {
+            if (arr[i] != null) newArr[i] = this.arr[i];
         }
+        newArr[this.arr.length] = newPerson;
         Person.setCountId(Person.getCountId() + 1);
         this.arr = newArr;
     }
 
+
+    /**
+     * @return возвращает массив персон
+     */
+    public Person[] getArr() {
+        return arr;
+    }
 
     /**
      * @param index по индексу удаляет персону из массива

@@ -6,7 +6,7 @@ import org.joda.time.Years;
 /**
  * Класс персоны
  */
-public class Person {
+public class Person{
     private int id;
     private String name;
     private LocalDate birthday;
@@ -99,5 +99,4 @@ public class Person {
     public void setGender(boolean gender) {
         this.gender = gender;
     }
-
 }
