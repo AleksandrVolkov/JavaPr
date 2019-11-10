@@ -1,12 +1,17 @@
 import org.joda.time.DateTimeZone;
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
+import ru.vsu.lab.entities.IDivision;
+import ru.vsu.lab.entities.IPerson;
+import ru.vsu.lab.entities.enums.Gender;
+
+import java.math.BigDecimal;
 
 
 /**
  * Класс персоны
  */
-public class Person{
+public class Person {
     private int id;
     private String name;
     private LocalDate birthday;
@@ -40,6 +45,7 @@ public class Person{
     public int getId() {
         return id;
     }
+
 
     /**
      * задает id персоны
@@ -82,16 +88,15 @@ public class Person{
     /**
      * @return возвращает пол (true - мужчина,false - женщина)
      */
-    public String getGender()
-    {
-        if(this.gender == true){
+    public String getGender() {
+        if (this.gender == true) {
             return "man";
-        }
-        else{
+        } else {
             return "woman";
         }
 
     }
+
 
     /**
      * задает пол в значении boolean(true - мужчина,false - женщина)
