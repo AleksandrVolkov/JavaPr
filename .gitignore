@@ -2,10 +2,4 @@
 /target/
 # IntellijIdea files
 /idea/
-/workspace.xml
-/checkstyle-idea.xml
-/compiler.xml
-/JavaPr.iml
-/misc.xml
-/modules.xml
-/vcs.xml
+
