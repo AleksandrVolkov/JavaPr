@@ -1,6 +1,5 @@
 package classesWithInterface;
 
-import classesWithInterface.Division;
 import ru.vsu.lab.reader.IReader;
 
 import java.io.BufferedReader;
