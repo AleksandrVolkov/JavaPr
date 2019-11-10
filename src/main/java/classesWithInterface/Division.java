@@ -1,3 +1,5 @@
+package classesWithInterface;
+
 import ru.vsu.lab.entities.IDivision;
 
 public class Division implements IDivision {

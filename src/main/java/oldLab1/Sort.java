@@ -1,3 +1,4 @@
+package oldLab1;
 
 public class Sort {
     private Person[] mainArray;

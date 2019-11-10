@@ -1,3 +1,5 @@
+package classesWithInterface;
+
 import ru.vsu.lab.entities.IPerson;
 import ru.vsu.lab.entities.enums.Gender;
 import ru.vsu.lab.reader.IReader;
@@ -38,6 +40,6 @@ public class Main {
     static String outputPerson(IPerson inpPr) {
         return String.format(" | ID " + inpPr.getId() + " | Имя " + inpPr.getFirstName() + ' ' + inpPr.getLastName() +
                 " | ДР " + inpPr.getBirthday().toString() + " | Возраст " + inpPr.getAge() + " | Пол " + inpPr.getGender() +
-                " | Division " + inpPr.getDivision().getName() + ' ' + inpPr.getDivision().getId() + " | Salary " + inpPr.getSalary());
+                " | classesWithInterface.Division " + inpPr.getDivision().getName() + ' ' + inpPr.getDivision().getId() + " | Salary " + inpPr.getSalary());
     }
 }

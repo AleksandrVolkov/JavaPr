@@ -1,3 +1,5 @@
+package classesWithInterface;
+
 import ru.vsu.lab.entities.*;
 import ru.vsu.lab.entities.enums.Gender;
 import java.math.BigDecimal;

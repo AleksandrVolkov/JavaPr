@@ -1,11 +1,8 @@
+package oldLab1;
+
 import org.joda.time.DateTimeZone;
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
-import ru.vsu.lab.entities.IDivision;
-import ru.vsu.lab.entities.IPerson;
-import ru.vsu.lab.entities.enums.Gender;
-
-import java.math.BigDecimal;
 
 
 /**

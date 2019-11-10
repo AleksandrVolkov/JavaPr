@@ -1,3 +1,5 @@
+package classesWithInterface;
+
 import ru.vsu.lab.entities.IPerson;
 import ru.vsu.lab.repository.IRepository;
 
@@ -9,7 +11,6 @@ import java.util.function.Predicate;
 public class Repository implements IRepository {
     private IPerson[] arr;
 
-
     public Repository() {
         this.arr = new IPerson[0];
     }
@@ -17,7 +18,6 @@ public class Repository implements IRepository {
     public IPerson[] getArr() {
         return arr;
     }
-
 
     @Override
     public void add(IPerson person) {
@@ -27,7 +27,6 @@ public class Repository implements IRepository {
             if (arr[i] != null) newArr[i] = this.arr[i];
         }
         newArr[this.arr.length] = person;
-        Person.setCountId(Person.getCountId() + 1);
         this.arr = newArr;
     }
 

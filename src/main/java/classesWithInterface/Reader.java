@@ -1,3 +1,6 @@
+package classesWithInterface;
+
+import classesWithInterface.Division;
 import ru.vsu.lab.reader.IReader;
 
 import java.io.BufferedReader;
@@ -6,7 +9,6 @@ import java.io.IOException;
 
 import ru.vsu.lab.entities.*;
 import ru.vsu.lab.entities.enums.Gender;
-import ru.vsu.lab.repository.IRepository;
 
 import java.math.BigDecimal;
 import java.time.*;
