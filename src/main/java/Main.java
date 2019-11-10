@@ -1,4 +1,5 @@
 import ru.vsu.lab.entities.IPerson;
+import ru.vsu.lab.entities.enums.Gender;
 import ru.vsu.lab.reader.IReader;
 import ru.vsu.lab.repository.IRepository;
 
@@ -16,9 +17,12 @@ public class Main {
         Comparator<IPerson> comp1 = ((o1, o2) -> Integer.compare(o1.getFirstName().compareTo(o2.getFirstName()), 0));
         Comparator<IPerson> comp2 = Comparator.comparingInt(IPerson::getAge);
 
-        IPerson[] pr =  rep.bubbleSort(comp2);
+        IPerson[] pr = rep.selectionSort(comp2.reversed());
 
-
+        IRepository rp = rep.searchBy(x -> x.getId() == 28292);
+        IRepository rp1 = rep.searchBy(x -> "Aaron".equals(x.getFirstName()));
+        IRepository rp2 = rep.searchBy(x -> x.getAge() == 79);
+        IRepository rp3 = rep.searchBy(x -> Gender.FEMALE.equals(x.getGender()));
 
 
         printPerson(pr);

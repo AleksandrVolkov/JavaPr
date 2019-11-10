@@ -23,7 +23,7 @@ public class Reader implements IReader {
             br.readLine();
             while ((line = br.readLine()) != null) {
 
-                if(i==100)break;
+                if(20==i++)break;
 
 
                 String[] el = line.split(";");

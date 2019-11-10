@@ -85,12 +85,11 @@ public class Repository implements IRepository {
     }
 
 
-
     @Override
     public void sortBy(Comparator<IPerson> comparator) {
-        Comparator<IPerson> comp = Comparator.comparingInt(IPerson::getId);
-        Comparator<IPerson> comp1 = ((o1, o2) -> Integer.compare(o1.getFirstName().compareTo(o2.getFirstName()), 0));
-        Comparator<IPerson> comp2 = Comparator.comparingInt(IPerson::getAge);
+        bubbleSort(comparator);
+        selectionSort(comparator);
+        insertionSort(comparator);
     }
 
     public IPerson[] bubbleSort(Comparator<IPerson> comparator) {
@@ -112,8 +111,7 @@ public class Repository implements IRepository {
             IPerson min = arr[i];
             int min_i = i;
             for (int j = i + 1; j < arr.length; j++) {
-
-                if (comparator.compare(arr[j], arr[j + 1]) < 0) {
+                if (comparator.compare(arr[j], min) < 0) {
                     min = arr[j];
                     min_i = j;
                 }
@@ -140,16 +138,18 @@ public class Repository implements IRepository {
                 j = j - 1;
             }
             arr[j + 1] = key;
-
-
         }
         return arr;
-
     }
 
 
     @Override
     public IRepository searchBy(Predicate<IPerson> condition) {
-        return null;
+        Repository rep = new Repository();
+        for (IPerson pr : this.arr) {
+            if (condition.test(pr)) rep.add(pr);
+        }
+        return rep;
     }
+
 }
