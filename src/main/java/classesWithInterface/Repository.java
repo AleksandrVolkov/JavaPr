@@ -54,7 +54,7 @@ public class Repository implements IRepository {
                 }
             }
             this.arr = newArr;
-            return null;
+            return this.arr[index];
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println(String.format("Индекс " + index + " выходит за границы массива."));
             return null;
@@ -65,7 +65,7 @@ public class Repository implements IRepository {
     public IPerson set(int index, IPerson person) {
         try {
             this.arr[index] = person;
-            return null;
+            return person;
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println(String.format("Индекс " + index + " выходит за границы массива."));
             return null;
@@ -86,61 +86,11 @@ public class Repository implements IRepository {
 
     @Override
     public void sortBy(Comparator<IPerson> comparator) {
-        bubbleSort(comparator);
-        selectionSort(comparator);
-        insertionSort(comparator);
+        Sort st = new Sort(this.arr);
+        this.arr = st.bubbleSort(comparator);
+        this.arr = st.selectionSort(comparator);
+        this.arr = st.insertionSort(comparator);
     }
-
-    public IPerson[] bubbleSort(Comparator<IPerson> comparator) {
-        IPerson[] arr = this.arr;
-        for (int i = 0; i < arr.length - 1; i++)
-            for (int j = 0; j < arr.length - i - 1; j++) {
-                if (comparator.compare(arr[j], arr[j + 1]) < 0) {
-                    IPerson temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
-        return arr;
-    }
-
-    public IPerson[] selectionSort(Comparator<IPerson> comparator) {
-        IPerson[] arr = this.arr;
-        for (int i = 0; i < arr.length; i++) {
-            IPerson min = arr[i];
-            int min_i = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (comparator.compare(arr[j], min) < 0) {
-                    min = arr[j];
-                    min_i = j;
-                }
-            }
-            if (i != min_i) {
-                IPerson tmp = arr[i];
-                arr[i] = arr[min_i];
-                arr[min_i] = tmp;
-            }
-        }
-        return arr;
-    }
-
-
-    public IPerson[] insertionSort(Comparator<IPerson> comparator) {
-        IPerson[] arr = this.arr;
-        IPerson key;
-        for (int i = 1; i < arr.length; i++) {
-            key = arr[i];
-            int j = i - 1;
-
-            while (j >= 0 && comparator.compare(arr[j], arr[j + 1]) < 0) {
-                arr[j + 1] = arr[j];
-                j = j - 1;
-            }
-            arr[j + 1] = key;
-        }
-        return arr;
-    }
-
 
     @Override
     public IRepository searchBy(Predicate<IPerson> condition) {
@@ -150,5 +100,4 @@ public class Repository implements IRepository {
         }
         return rep;
     }
-
 }
