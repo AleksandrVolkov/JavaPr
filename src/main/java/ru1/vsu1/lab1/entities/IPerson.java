@@ -1,9 +1,9 @@
-package ru.vsu.lab.entities;
+package ru1.vsu1.lab1.entities;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import ru.vsu.lab.entities.enums.Gender;
+import ru1.vsu1.lab1.entities.enums.Gender;
 
 public interface IPerson {
 	

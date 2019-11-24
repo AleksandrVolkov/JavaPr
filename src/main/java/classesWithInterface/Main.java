@@ -1,18 +1,24 @@
 package classesWithInterface;
 
-import ru.vsu.lab.entities.IPerson;
-import ru.vsu.lab.entities.enums.Gender;
-import ru.vsu.lab.reader.IReader;
-import ru.vsu.lab.repository.IRepository;
+import ru1.vsu1.lab1.entities.IPerson;
+import ru1.vsu1.lab1.entities.enums.Gender;
+import ru1.vsu1.lab1.reader.IReader;
+import ru1.vsu1.lab1.repository.IRepository;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         Repository rep = new Repository();
+
         IReader reader = new Reader(rep, ".\\src\\main\\resources\\persons.csv");
         rep = (Repository) reader.read();
+
+
+        rep.add(2, new Persone1(1, "", "", LocalDate.now(), Gender.MALE, new Division(1, "d"), new BigDecimal("123.44444444444444444444444")));
 
         Comparator<IPerson> comp = Comparator.comparingInt(IPerson::getId);
 
@@ -28,7 +34,7 @@ public class Main {
 
 
 //        printPerson(pr);
-        printLPerson(rp3.toList());
+        printLPerson(rep.toList());
 
     }
 

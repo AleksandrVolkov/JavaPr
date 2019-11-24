@@ -1,6 +1,6 @@
 package classesWithInterface;
-
-import ru.vsu.lab.entities.IDivision;
+//import  ru.vsu.*;
+import ru1.vsu1.lab1.entities.IDivision;
 
 public class Division implements IDivision {
     private Integer id;
@@ -13,6 +13,7 @@ public class Division implements IDivision {
 
     @Override
     public Integer getId() {
+
         return this.id;
     }
 

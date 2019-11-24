@@ -1,10 +1,10 @@
-package ru.vsu.lab.repository;
+package ru1.vsu1.lab1.repository;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 
-import ru.vsu.lab.entities.IPerson;
+import ru1.vsu1.lab1.entities.IPerson;
 
 public interface IRepository {
 	

@@ -1,7 +1,8 @@
 package classesWithInterface;
 
-import ru.vsu.lab.entities.*;
-import ru.vsu.lab.entities.enums.Gender;
+import ru1.vsu1.lab1.entities.IDivision;
+import ru1.vsu1.lab1.entities.IPerson;
+import ru1.vsu1.lab1.entities.enums.Gender;
 import java.math.BigDecimal;
 import java.time.*;
 
@@ -16,12 +17,12 @@ public class Persone1 implements IPerson {
     private IDivision division;
     private BigDecimal salary;
 
-    public Persone1(Integer id, String firstName, String lastName, LocalDate birthday, Integer age, Gender gender, IDivision division, BigDecimal salary) {
+    public Persone1(Integer id, String firstName, String lastName, LocalDate birthday,  Gender gender, IDivision division, BigDecimal salary) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthday = birthday;
-        this.age = age;
+        this.age = Period.between(this.birthday, LocalDate.now()).getYears();
         this.gender = gender;
         this.division = division;
         this.salary = salary;
@@ -72,7 +73,7 @@ public class Persone1 implements IPerson {
 
     @Override
     public Integer getAge() {
-        return Period.between(this.birthday, LocalDate.now()).getYears();
+        return age;
     }
 
     @Override

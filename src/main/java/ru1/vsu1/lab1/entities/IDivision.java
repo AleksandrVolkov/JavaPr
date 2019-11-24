@@ -1,4 +1,4 @@
-package ru.vsu.lab.entities;
+package ru1.vsu1.lab1.entities;
 
 public interface IDivision {
 	

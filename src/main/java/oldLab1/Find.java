@@ -1,7 +1,6 @@
 package oldLab1;
 
 import oldLab1.DynamicArray;
-
 import java.util.Optional;
 
 public class Find {
@@ -15,6 +14,7 @@ public class Find {
         for (Person pr : mainArray) {
             if (pr.getId() == id) return Optional.of(pr);
         }
+
         return Optional.empty();
     }
 

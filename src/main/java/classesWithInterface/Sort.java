@@ -1,6 +1,7 @@
 package classesWithInterface;
 
-import ru.vsu.lab.entities.IPerson;
+//import ru.vsu.lab.entities.IPerson;
+import ru1.vsu1.lab1.entities.IPerson;
 
 import java.util.Comparator;
 
